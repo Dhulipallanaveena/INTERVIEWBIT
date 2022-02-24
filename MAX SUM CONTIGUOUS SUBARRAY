@@ -1,0 +1,13 @@
+class Solution:
+    # @param A : tuple of integers
+    # @return an integer
+    def maxSubArray(self, A):
+        maxsub=A[0]
+        cursum=0
+        for i in A:
+            if cursum<0:
+                cursum=0
+            cursum+=i
+            maxsub=max(maxsub,cursum)
+        return maxsub
+        
